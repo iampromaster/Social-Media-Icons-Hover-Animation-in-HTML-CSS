@@ -1,0 +1,87 @@
+@import url("https://fonts.cdnfonts.com/css/poppins");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.wrapper {
+  display: inline-flex;
+  gap: 15px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon a {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: var(--clr);
+  transition: 0.5s;
+}
+
+.icon a:hover {
+  border-color: var(--clr);
+  transform: rotate(-45deg) skew(20deg);
+  margin-top: -20px;
+}
+
+.icon a::before,
+.icon a::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+.icon a:hover::before {
+  border-color: var(--clr);
+  transform: translate(-3px,3px);
+  opacity: 0.6;
+}
+
+.icon a:hover::after {
+  border-color: var(--clr);
+  transform: translate(-5px,5px);
+  opacity: 0.5;
+  box-shadow: 0 0 10px 2px var(--clr);
+}
+
+.icon span {
+  color: var(--clr);
+  font-size: 15px;
+  transform: translateY(-30px);
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.icon a:hover ~ span {
+  transform: translateY(25px);
+  opacity: 1;
+}
